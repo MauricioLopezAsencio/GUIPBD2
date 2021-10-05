@@ -30,26 +30,28 @@ namespace GUIPBD2
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fEmpresa));
             System.Windows.Forms.Label iDEmpresaLabel;
             System.Windows.Forms.Label razonSocialLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fEmpresa));
             this.pnlBotones = new System.Windows.Forms.Panel();
-            this.pnlDetalle = new System.Windows.Forms.Panel();
-            this.btnInsertar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.pBDDataSet = new GUIPBD2.PBDDataSet();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnInsertar = new System.Windows.Forms.Button();
+            this.pnlDetalle = new System.Windows.Forms.Panel();
+            this.razonSocialTextBox = new System.Windows.Forms.TextBox();
             this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pBDDataSet = new GUIPBD2.PBDDataSet();
+            this.iDEmpresaTextBox = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.empresaTableAdapter = new GUIPBD2.PBDDataSetTableAdapters.EmpresaTableAdapter();
             this.tableAdapterManager = new GUIPBD2.PBDDataSetTableAdapters.TableAdapterManager();
             this.empresaBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
@@ -57,18 +59,36 @@ namespace GUIPBD2
             this.empresaDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDEmpresaTextBox = new System.Windows.Forms.TextBox();
-            this.razonSocialTextBox = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             iDEmpresaLabel = new System.Windows.Forms.Label();
             razonSocialLabel = new System.Windows.Forms.Label();
             this.pnlBotones.SuspendLayout();
             this.pnlDetalle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresaBindingNavigator)).BeginInit();
             this.empresaBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empresaDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // iDEmpresaLabel
+            // 
+            iDEmpresaLabel.AutoSize = true;
+            iDEmpresaLabel.Location = new System.Drawing.Point(18, 25);
+            iDEmpresaLabel.Name = "iDEmpresaLabel";
+            iDEmpresaLabel.Size = new System.Drawing.Size(62, 13);
+            iDEmpresaLabel.TabIndex = 4;
+            iDEmpresaLabel.Text = "IDEmpresa:";
+            // 
+            // razonSocialLabel
+            // 
+            razonSocialLabel.AutoSize = true;
+            razonSocialLabel.Location = new System.Drawing.Point(12, 65);
+            razonSocialLabel.Name = "razonSocialLabel";
+            razonSocialLabel.Size = new System.Drawing.Size(73, 13);
+            razonSocialLabel.TabIndex = 5;
+            razonSocialLabel.Text = "Razon Social:";
             // 
             // pnlBotones
             // 
@@ -80,6 +100,39 @@ namespace GUIPBD2
             this.pnlBotones.Name = "pnlBotones";
             this.pnlBotones.Size = new System.Drawing.Size(816, 100);
             this.pnlBotones.TabIndex = 0;
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
+            this.btnBorrar.Location = new System.Drawing.Point(258, 12);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(96, 78);
+            this.btnBorrar.TabIndex = 2;
+            this.btnBorrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.Location = new System.Drawing.Point(136, 12);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(96, 78);
+            this.btnEditar.TabIndex = 1;
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnInsertar
+            // 
+            this.btnInsertar.Image = ((System.Drawing.Image)(resources.GetObject("btnInsertar.Image")));
+            this.btnInsertar.Location = new System.Drawing.Point(12, 12);
+            this.btnInsertar.Name = "btnInsertar";
+            this.btnInsertar.Size = new System.Drawing.Size(96, 78);
+            this.btnInsertar.TabIndex = 0;
+            this.btnInsertar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // pnlDetalle
             // 
@@ -95,49 +148,33 @@ namespace GUIPBD2
             this.pnlDetalle.Size = new System.Drawing.Size(816, 116);
             this.pnlDetalle.TabIndex = 1;
             // 
-            // btnInsertar
+            // razonSocialTextBox
             // 
-            this.btnInsertar.Image = ((System.Drawing.Image)(resources.GetObject("btnInsertar.Image")));
-            this.btnInsertar.Location = new System.Drawing.Point(12, 12);
-            this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(96, 78);
-            this.btnInsertar.TabIndex = 0;
-            this.btnInsertar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnInsertar.UseVisualStyleBackColor = true;
-            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
+            this.razonSocialTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.razonSocialTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresaBindingSource, "RazonSocial", true));
+            this.razonSocialTextBox.Location = new System.Drawing.Point(91, 62);
+            this.razonSocialTextBox.Name = "razonSocialTextBox";
+            this.razonSocialTextBox.Size = new System.Drawing.Size(416, 20);
+            this.razonSocialTextBox.TabIndex = 6;
             // 
-            // btnEditar
+            // empresaBindingSource
             // 
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(136, 12);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(96, 78);
-            this.btnEditar.TabIndex = 1;
-            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.empresaBindingSource.DataMember = "Empresa";
+            this.empresaBindingSource.DataSource = this.pBDDataSet;
             // 
-            // btnBorrar
+            // pBDDataSet
             // 
-            this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
-            this.btnBorrar.Location = new System.Drawing.Point(258, 12);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(96, 78);
-            this.btnBorrar.TabIndex = 2;
-            this.btnBorrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBorrar.UseVisualStyleBackColor = true;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            this.pBDDataSet.DataSetName = "PBDDataSet";
+            this.pBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btnGuardar
+            // iDEmpresaTextBox
             // 
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(591, 26);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(96, 78);
-            this.btnGuardar.TabIndex = 3;
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.iDEmpresaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresaBindingSource, "IDEmpresa", true));
+            this.iDEmpresaTextBox.Enabled = false;
+            this.iDEmpresaTextBox.Location = new System.Drawing.Point(91, 22);
+            this.iDEmpresaTextBox.Name = "iDEmpresaTextBox";
+            this.iDEmpresaTextBox.Size = new System.Drawing.Size(122, 20);
+            this.iDEmpresaTextBox.TabIndex = 5;
             // 
             // btnCancelar
             // 
@@ -151,15 +188,17 @@ namespace GUIPBD2
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // pBDDataSet
+            // btnGuardar
             // 
-            this.pBDDataSet.DataSetName = "PBDDataSet";
-            this.pBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // empresaBindingSource
-            // 
-            this.empresaBindingSource.DataMember = "Empresa";
-            this.empresaBindingSource.DataSource = this.pBDDataSet;
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Location = new System.Drawing.Point(591, 26);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(96, 78);
+            this.btnGuardar.TabIndex = 3;
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // empresaTableAdapter
             // 
@@ -200,6 +239,13 @@ namespace GUIPBD2
             this.empresaBindingNavigator.TabIndex = 2;
             this.empresaBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -233,16 +279,9 @@ namespace GUIPBD2
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -265,7 +304,7 @@ namespace GUIPBD2
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // empresaDataGridView
@@ -300,41 +339,9 @@ namespace GUIPBD2
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // iDEmpresaLabel
+            // errorProvider1
             // 
-            iDEmpresaLabel.AutoSize = true;
-            iDEmpresaLabel.Location = new System.Drawing.Point(18, 25);
-            iDEmpresaLabel.Name = "iDEmpresaLabel";
-            iDEmpresaLabel.Size = new System.Drawing.Size(62, 13);
-            iDEmpresaLabel.TabIndex = 4;
-            iDEmpresaLabel.Text = "IDEmpresa:";
-            // 
-            // iDEmpresaTextBox
-            // 
-            this.iDEmpresaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresaBindingSource, "IDEmpresa", true));
-            this.iDEmpresaTextBox.Enabled = false;
-            this.iDEmpresaTextBox.Location = new System.Drawing.Point(91, 22);
-            this.iDEmpresaTextBox.Name = "iDEmpresaTextBox";
-            this.iDEmpresaTextBox.Size = new System.Drawing.Size(122, 20);
-            this.iDEmpresaTextBox.TabIndex = 5;
-            // 
-            // razonSocialLabel
-            // 
-            razonSocialLabel.AutoSize = true;
-            razonSocialLabel.Location = new System.Drawing.Point(12, 65);
-            razonSocialLabel.Name = "razonSocialLabel";
-            razonSocialLabel.Size = new System.Drawing.Size(73, 13);
-            razonSocialLabel.TabIndex = 5;
-            razonSocialLabel.Text = "Razon Social:";
-            // 
-            // razonSocialTextBox
-            // 
-            this.razonSocialTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.razonSocialTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresaBindingSource, "RazonSocial", true));
-            this.razonSocialTextBox.Location = new System.Drawing.Point(91, 62);
-            this.razonSocialTextBox.Name = "razonSocialTextBox";
-            this.razonSocialTextBox.Size = new System.Drawing.Size(416, 20);
-            this.razonSocialTextBox.TabIndex = 6;
+            this.errorProvider1.ContainerControl = this;
             // 
             // fEmpresa
             // 
@@ -353,12 +360,13 @@ namespace GUIPBD2
             this.pnlBotones.ResumeLayout(false);
             this.pnlDetalle.ResumeLayout(false);
             this.pnlDetalle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresaBindingNavigator)).EndInit();
             this.empresaBindingNavigator.ResumeLayout(false);
             this.empresaBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empresaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,5 +400,6 @@ namespace GUIPBD2
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.TextBox razonSocialTextBox;
         private System.Windows.Forms.TextBox iDEmpresaTextBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
