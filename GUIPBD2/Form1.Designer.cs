@@ -41,8 +41,8 @@ namespace GUIPBD2
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(18, 56);
+            this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label1.Location = new System.Drawing.Point(18, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(770, 25);
             this.label1.TabIndex = 0;
@@ -51,39 +51,43 @@ namespace GUIPBD2
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(105, 165);
+            this.button1.Location = new System.Drawing.Point(105, 205);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(108, 96);
             this.button1.TabIndex = 1;
             this.button1.Text = "EMPRESA";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(346, 165);
+            this.button2.Location = new System.Drawing.Point(343, 205);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(108, 96);
             this.button2.TabIndex = 2;
             this.button2.Text = "ALUMNO";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(584, 165);
+            this.button3.Location = new System.Drawing.Point(584, 205);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(108, 96);
             this.button3.TabIndex = 3;
             this.button3.Text = "ALUMNOEMPRESA";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
