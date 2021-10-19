@@ -22,5 +22,11 @@ namespace GUIPBD2
             fEmpresa x = new fEmpresa();
             x.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            fAlumno x = new fAlumno();
+            x.ShowDialog();
+        }
     }
 }

@@ -92,6 +92,7 @@ namespace GUIPBD2
             // 
             // pnlBotones
             // 
+            this.pnlBotones.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlBotones.BackgroundImage")));
             this.pnlBotones.Controls.Add(this.btnBorrar);
             this.pnlBotones.Controls.Add(this.btnEditar);
             this.pnlBotones.Controls.Add(this.btnInsertar);
@@ -136,6 +137,7 @@ namespace GUIPBD2
             // 
             // pnlDetalle
             // 
+            this.pnlDetalle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlDetalle.BackgroundImage")));
             this.pnlDetalle.Controls.Add(razonSocialLabel);
             this.pnlDetalle.Controls.Add(this.razonSocialTextBox);
             this.pnlDetalle.Controls.Add(iDEmpresaLabel);
@@ -313,6 +315,7 @@ namespace GUIPBD2
             this.empresaDataGridView.AllowUserToDeleteRows = false;
             this.empresaDataGridView.AllowUserToOrderColumns = true;
             this.empresaDataGridView.AutoGenerateColumns = false;
+            this.empresaDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.empresaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.empresaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
