@@ -30,7 +30,6 @@ namespace GUIPBD2
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAlumno));
             System.Windows.Forms.Label iDAlumnoLabel;
             System.Windows.Forms.Label nombreLabel;
             System.Windows.Forms.Label primerApellidoLabel;
@@ -38,23 +37,31 @@ namespace GUIPBD2
             System.Windows.Forms.Label noControlLabel;
             System.Windows.Forms.Label emailLabel;
             System.Windows.Forms.Label telefonoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAlumno));
             this.pnlBotones = new System.Windows.Forms.Panel();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.pnlDetalle = new System.Windows.Forms.Panel();
+            this.telefonoTextBox = new System.Windows.Forms.TextBox();
+            this.alumnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pBDDataSet = new GUIPBD2.PBDDataSet();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.noControlTextBox = new System.Windows.Forms.TextBox();
+            this.segundoApellidoTextBox = new System.Windows.Forms.TextBox();
+            this.primerApellidoTextBox = new System.Windows.Forms.TextBox();
+            this.nombreTextBox = new System.Windows.Forms.TextBox();
+            this.iDAlumnoTextBox = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.pBDDataSet = new GUIPBD2.PBDDataSet();
-            this.alumnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.alumnoTableAdapter = new GUIPBD2.PBDDataSetTableAdapters.AlumnoTableAdapter();
             this.tableAdapterManager = new GUIPBD2.PBDDataSetTableAdapters.TableAdapterManager();
             this.alumnoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
@@ -67,13 +74,6 @@ namespace GUIPBD2
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDAlumnoTextBox = new System.Windows.Forms.TextBox();
-            this.nombreTextBox = new System.Windows.Forms.TextBox();
-            this.primerApellidoTextBox = new System.Windows.Forms.TextBox();
-            this.segundoApellidoTextBox = new System.Windows.Forms.TextBox();
-            this.noControlTextBox = new System.Windows.Forms.TextBox();
-            this.emailTextBox = new System.Windows.Forms.TextBox();
-            this.telefonoTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             iDAlumnoLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
@@ -84,13 +84,76 @@ namespace GUIPBD2
             telefonoLabel = new System.Windows.Forms.Label();
             this.pnlBotones.SuspendLayout();
             this.pnlDetalle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnoBindingNavigator)).BeginInit();
             this.alumnoBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alumnoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // iDAlumnoLabel
+            // 
+            iDAlumnoLabel.AutoSize = true;
+            iDAlumnoLabel.Location = new System.Drawing.Point(39, 26);
+            iDAlumnoLabel.Name = "iDAlumnoLabel";
+            iDAlumnoLabel.Size = new System.Drawing.Size(56, 13);
+            iDAlumnoLabel.TabIndex = 4;
+            iDAlumnoLabel.Text = "IDAlumno:";
+            // 
+            // nombreLabel
+            // 
+            nombreLabel.AutoSize = true;
+            nombreLabel.Location = new System.Drawing.Point(45, 52);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(47, 13);
+            nombreLabel.TabIndex = 5;
+            nombreLabel.Text = "Nombre:";
+            // 
+            // primerApellidoLabel
+            // 
+            primerApellidoLabel.AutoSize = true;
+            primerApellidoLabel.Location = new System.Drawing.Point(16, 78);
+            primerApellidoLabel.Name = "primerApellidoLabel";
+            primerApellidoLabel.Size = new System.Drawing.Size(79, 13);
+            primerApellidoLabel.TabIndex = 6;
+            primerApellidoLabel.Text = "Primer Apellido:";
+            // 
+            // segundoApellidoLabel
+            // 
+            segundoApellidoLabel.AutoSize = true;
+            segundoApellidoLabel.Location = new System.Drawing.Point(2, 104);
+            segundoApellidoLabel.Name = "segundoApellidoLabel";
+            segundoApellidoLabel.Size = new System.Drawing.Size(93, 13);
+            segundoApellidoLabel.TabIndex = 8;
+            segundoApellidoLabel.Text = "Segundo Apellido:";
+            // 
+            // noControlLabel
+            // 
+            noControlLabel.AutoSize = true;
+            noControlLabel.Location = new System.Drawing.Point(255, 30);
+            noControlLabel.Name = "noControlLabel";
+            noControlLabel.Size = new System.Drawing.Size(60, 13);
+            noControlLabel.TabIndex = 10;
+            noControlLabel.Text = "No Control:";
+            // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Location = new System.Drawing.Point(280, 56);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(35, 13);
+            emailLabel.TabIndex = 12;
+            emailLabel.Text = "Email:";
+            // 
+            // telefonoLabel
+            // 
+            telefonoLabel.AutoSize = true;
+            telefonoLabel.Location = new System.Drawing.Point(263, 82);
+            telefonoLabel.Name = "telefonoLabel";
+            telefonoLabel.Size = new System.Drawing.Size(52, 13);
+            telefonoLabel.TabIndex = 14;
+            telefonoLabel.Text = "Telefono:";
             // 
             // pnlBotones
             // 
@@ -162,6 +225,77 @@ namespace GUIPBD2
             this.pnlDetalle.Size = new System.Drawing.Size(913, 176);
             this.pnlDetalle.TabIndex = 2;
             // 
+            // telefonoTextBox
+            // 
+            this.telefonoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnoBindingSource, "Telefono", true));
+            this.telefonoTextBox.Location = new System.Drawing.Point(321, 79);
+            this.telefonoTextBox.Name = "telefonoTextBox";
+            this.telefonoTextBox.Size = new System.Drawing.Size(172, 20);
+            this.telefonoTextBox.TabIndex = 15;
+            // 
+            // alumnoBindingSource
+            // 
+            this.alumnoBindingSource.DataMember = "Alumno";
+            this.alumnoBindingSource.DataSource = this.pBDDataSet;
+            // 
+            // pBDDataSet
+            // 
+            this.pBDDataSet.DataSetName = "PBDDataSet";
+            this.pBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // emailTextBox
+            // 
+            this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnoBindingSource, "Email", true));
+            this.emailTextBox.Location = new System.Drawing.Point(321, 52);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(204, 20);
+            this.emailTextBox.TabIndex = 13;
+            // 
+            // noControlTextBox
+            // 
+            this.noControlTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.noControlTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnoBindingSource, "NoControl", true));
+            this.noControlTextBox.Location = new System.Drawing.Point(321, 27);
+            this.noControlTextBox.Name = "noControlTextBox";
+            this.noControlTextBox.Size = new System.Drawing.Size(100, 20);
+            this.noControlTextBox.TabIndex = 11;
+            // 
+            // segundoApellidoTextBox
+            // 
+            this.segundoApellidoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.segundoApellidoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnoBindingSource, "SegundoApellido", true));
+            this.segundoApellidoTextBox.Location = new System.Drawing.Point(98, 101);
+            this.segundoApellidoTextBox.Name = "segundoApellidoTextBox";
+            this.segundoApellidoTextBox.Size = new System.Drawing.Size(143, 20);
+            this.segundoApellidoTextBox.TabIndex = 9;
+            // 
+            // primerApellidoTextBox
+            // 
+            this.primerApellidoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.primerApellidoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnoBindingSource, "PrimerApellido", true));
+            this.primerApellidoTextBox.Location = new System.Drawing.Point(98, 75);
+            this.primerApellidoTextBox.Name = "primerApellidoTextBox";
+            this.primerApellidoTextBox.Size = new System.Drawing.Size(143, 20);
+            this.primerApellidoTextBox.TabIndex = 7;
+            // 
+            // nombreTextBox
+            // 
+            this.nombreTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnoBindingSource, "Nombre", true));
+            this.nombreTextBox.Location = new System.Drawing.Point(98, 49);
+            this.nombreTextBox.Name = "nombreTextBox";
+            this.nombreTextBox.Size = new System.Drawing.Size(143, 20);
+            this.nombreTextBox.TabIndex = 6;
+            // 
+            // iDAlumnoTextBox
+            // 
+            this.iDAlumnoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnoBindingSource, "IDAlumno", true));
+            this.iDAlumnoTextBox.Enabled = false;
+            this.iDAlumnoTextBox.Location = new System.Drawing.Point(98, 23);
+            this.iDAlumnoTextBox.Name = "iDAlumnoTextBox";
+            this.iDAlumnoTextBox.Size = new System.Drawing.Size(103, 20);
+            this.iDAlumnoTextBox.TabIndex = 5;
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -185,16 +319,6 @@ namespace GUIPBD2
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // pBDDataSet
-            // 
-            this.pBDDataSet.DataSetName = "PBDDataSet";
-            this.pBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // alumnoBindingSource
-            // 
-            this.alumnoBindingSource.DataMember = "Alumno";
-            this.alumnoBindingSource.DataSource = this.pBDDataSet;
             // 
             // alumnoTableAdapter
             // 
@@ -235,6 +359,13 @@ namespace GUIPBD2
             this.alumnoBindingNavigator.TabIndex = 3;
             this.alumnoBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -268,16 +399,9 @@ namespace GUIPBD2
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -300,7 +424,7 @@ namespace GUIPBD2
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // alumnoDataGridView
@@ -375,130 +499,6 @@ namespace GUIPBD2
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
-            // iDAlumnoLabel
-            // 
-            iDAlumnoLabel.AutoSize = true;
-            iDAlumnoLabel.Location = new System.Drawing.Point(39, 26);
-            iDAlumnoLabel.Name = "iDAlumnoLabel";
-            iDAlumnoLabel.Size = new System.Drawing.Size(56, 13);
-            iDAlumnoLabel.TabIndex = 4;
-            iDAlumnoLabel.Text = "IDAlumno:";
-            // 
-            // iDAlumnoTextBox
-            // 
-            this.iDAlumnoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnoBindingSource, "IDAlumno", true));
-            this.iDAlumnoTextBox.Enabled = false;
-            this.iDAlumnoTextBox.Location = new System.Drawing.Point(98, 23);
-            this.iDAlumnoTextBox.Name = "iDAlumnoTextBox";
-            this.iDAlumnoTextBox.Size = new System.Drawing.Size(103, 20);
-            this.iDAlumnoTextBox.TabIndex = 5;
-            // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(45, 52);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(47, 13);
-            nombreLabel.TabIndex = 5;
-            nombreLabel.Text = "Nombre:";
-            // 
-            // nombreTextBox
-            // 
-            this.nombreTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnoBindingSource, "Nombre", true));
-            this.nombreTextBox.Location = new System.Drawing.Point(98, 49);
-            this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(143, 20);
-            this.nombreTextBox.TabIndex = 6;
-            // 
-            // primerApellidoLabel
-            // 
-            primerApellidoLabel.AutoSize = true;
-            primerApellidoLabel.Location = new System.Drawing.Point(16, 78);
-            primerApellidoLabel.Name = "primerApellidoLabel";
-            primerApellidoLabel.Size = new System.Drawing.Size(79, 13);
-            primerApellidoLabel.TabIndex = 6;
-            primerApellidoLabel.Text = "Primer Apellido:";
-            // 
-            // primerApellidoTextBox
-            // 
-            this.primerApellidoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.primerApellidoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnoBindingSource, "PrimerApellido", true));
-            this.primerApellidoTextBox.Location = new System.Drawing.Point(98, 75);
-            this.primerApellidoTextBox.Name = "primerApellidoTextBox";
-            this.primerApellidoTextBox.Size = new System.Drawing.Size(143, 20);
-            this.primerApellidoTextBox.TabIndex = 7;
-            // 
-            // segundoApellidoLabel
-            // 
-            segundoApellidoLabel.AutoSize = true;
-            segundoApellidoLabel.Location = new System.Drawing.Point(2, 104);
-            segundoApellidoLabel.Name = "segundoApellidoLabel";
-            segundoApellidoLabel.Size = new System.Drawing.Size(93, 13);
-            segundoApellidoLabel.TabIndex = 8;
-            segundoApellidoLabel.Text = "Segundo Apellido:";
-            // 
-            // segundoApellidoTextBox
-            // 
-            this.segundoApellidoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.segundoApellidoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnoBindingSource, "SegundoApellido", true));
-            this.segundoApellidoTextBox.Location = new System.Drawing.Point(98, 101);
-            this.segundoApellidoTextBox.Name = "segundoApellidoTextBox";
-            this.segundoApellidoTextBox.Size = new System.Drawing.Size(143, 20);
-            this.segundoApellidoTextBox.TabIndex = 9;
-            // 
-            // noControlLabel
-            // 
-            noControlLabel.AutoSize = true;
-            noControlLabel.Location = new System.Drawing.Point(260, 52);
-            noControlLabel.Name = "noControlLabel";
-            noControlLabel.Size = new System.Drawing.Size(60, 13);
-            noControlLabel.TabIndex = 10;
-            noControlLabel.Text = "No Control:";
-            // 
-            // noControlTextBox
-            // 
-            this.noControlTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.noControlTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnoBindingSource, "NoControl", true));
-            this.noControlTextBox.Location = new System.Drawing.Point(326, 49);
-            this.noControlTextBox.Name = "noControlTextBox";
-            this.noControlTextBox.Size = new System.Drawing.Size(100, 20);
-            this.noControlTextBox.TabIndex = 11;
-            // 
-            // emailLabel
-            // 
-            emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(285, 78);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(35, 13);
-            emailLabel.TabIndex = 12;
-            emailLabel.Text = "Email:";
-            // 
-            // emailTextBox
-            // 
-            this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnoBindingSource, "Email", true));
-            this.emailTextBox.Location = new System.Drawing.Point(326, 74);
-            this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(204, 20);
-            this.emailTextBox.TabIndex = 13;
-            // 
-            // telefonoLabel
-            // 
-            telefonoLabel.AutoSize = true;
-            telefonoLabel.Location = new System.Drawing.Point(268, 104);
-            telefonoLabel.Name = "telefonoLabel";
-            telefonoLabel.Size = new System.Drawing.Size(52, 13);
-            telefonoLabel.TabIndex = 14;
-            telefonoLabel.Text = "Telefono:";
-            // 
-            // telefonoTextBox
-            // 
-            this.telefonoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alumnoBindingSource, "Telefono", true));
-            this.telefonoTextBox.Location = new System.Drawing.Point(326, 101);
-            this.telefonoTextBox.Name = "telefonoTextBox";
-            this.telefonoTextBox.Size = new System.Drawing.Size(172, 20);
-            this.telefonoTextBox.TabIndex = 15;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -521,8 +521,8 @@ namespace GUIPBD2
             this.pnlBotones.ResumeLayout(false);
             this.pnlDetalle.ResumeLayout(false);
             this.pnlDetalle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnoBindingNavigator)).EndInit();
             this.alumnoBindingNavigator.ResumeLayout(false);
             this.alumnoBindingNavigator.PerformLayout();
